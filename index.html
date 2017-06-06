@@ -18,7 +18,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-  <link href="./static/css/main.5dfcb50a.css" rel="stylesheet"></head>
+  <link href="./static/css/main.5c74303c.css" rel="stylesheet"></head>
   <body>
     <div id="root"></div>
     <!--
@@ -31,10 +31,18 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
-  <script type="text/javascript" src="./static/js/main.48fd5536.js"></script></body>
+  <script type="text/javascript" src="./static/js/main.79935972.js"></script></body>
 
     <script>
       $(function(){
+        function bindArrow(section) {
+          $(section + ' .down-arrow').mouseover(function(){
+            $(section + " .down-arrow2").css("top","102px");
+          });
+          $(section + ' .down-arrow').mouseout(function(){
+            $(section + " .down-arrow2").css("top","0");
+          });
+        }
         $('.main').onepage_scroll({
           sectionContainer: '.page',
           loop: false,
@@ -52,6 +60,8 @@
                   $('.ies-btn').css('right', '18.2%')
                   $('.ies-device').css('opacity', '1')
                   $('.ies-device').css('bottom', '0')
+                  $('.ies .down-arrow2').css('top', '0')
+                  bindArrow('.ies');
                   break;
                 case 3:
                   $('.china > h1').css('opacity', '1')
@@ -63,7 +73,26 @@
                   $('.child').css('opacity', '1')
                   $('.child').css('left', '15%')
                   $('.child').css('bottom', '18%')
+                  $('.china .down-arrow2').css('top', '0')
+                  bindArrow('.china');
 
+                  // function cityAppear(i) {
+                  //   if(i < 19) {
+                  //     setTimeout(function(){
+                  //       $('.city' + i).css('opacity', '1')
+                  //       console.log(i + '???')
+                  //     },100 * i)
+                  //   }else if(18 < i <= 24) {
+                  //     setTimeout(function(){
+                  //       $('.city' + i).css('opacity', '1')
+                  //       $('.city-name' + i).css('opacity', '1')
+                  //       console.log(i + '???  name')
+                  //     },100 * i)
+                  //   }
+                  // }
+                  // for (var i = 1; i <= 24; i++) {
+                  //   cityAppear(i);
+                  // }
                   var i = 0
                   function cityAppear() {
                     i++;
@@ -72,14 +101,14 @@
                         $('.city' + i).css('opacity', '1')
                         console.log(i + '???')
                         return cityAppear()
-                      },100)
+                      },30)
                     }else if(18 < i <= 24) {
                       setTimeout(function(){
                         $('.city' + i).css('opacity', '1')
                         $('.city-name' + i).css('opacity', '1')
                         console.log(i + '???  name')
                         return cityAppear()
-                      },100)
+                      },30)
                     }
 
                   }
@@ -87,6 +116,9 @@
                   break;
                 case 4:
                   $('.honor-box').css('opacity', '1')
+                  $('.ies-img-2').css('top', '-140px')
+                  $('.honor .down-arrow2').css('top', '0')
+                  bindArrow('.honor');
                   break;
               }
             } else {
@@ -102,6 +134,8 @@
                   $('.ies-btn').css('right', '17%')
                   $('.ies-device').css('opacity', '1')
                   $('.ies-device').css('bottom', '0')
+                  $('.ies .down-arrow2').css('top', '0')
+                  bindArrow('.ies');
                   break;
                 case 3:
                   $('.china > h1').css('opacity', '1')
@@ -113,30 +147,52 @@
                   $('.child').css('opacity', '1')
                   $('.child').css('left', '15%')
                   $('.child').css('bottom', '18%')
+                  $('.china .down-arrow2').css('top', '0')
+                  bindArrow('.china');
 
+                  // function cityAppear(i) {
+                  //   if(i < 19) {
+                  //     setTimeout(function(){
+                  //       $('.city' + i).css('opacity', '1')
+                  //       console.log(i + '???')
+                  //     },100 * i)
+                  //   }else if(18 < i <= 24) {
+                  //     setTimeout(function(){
+                  //       $('.city' + i).css('opacity', '1')
+                  //       $('.city-name' + i).css('opacity', '1')
+                  //       console.log(i + '???  name')
+                  //     },100 * i)
+                  //   }
+                  // }
+                  // for (var i = 1; i <= 24; i++) {
+                  //   cityAppear(i);
+                  // }
                   var i = 0
                   function cityAppear() {
                     i++;
-                    if(i <= 19) {
+                    if(i < 19) {
                       setTimeout(function(){
                         $('.city' + i).css('opacity', '1')
                         console.log(i + '???')
                         return cityAppear()
-                      },100)
-                    }else if(19 < i <= 24) {
+                      },30)
+                    }else if(18 < i <= 24) {
                       setTimeout(function(){
                         $('.city' + i).css('opacity', '1')
                         $('.city-name' + i).css('opacity', '1')
                         console.log(i + '???  name')
                         return cityAppear()
-                      },100)
+                      },30)
                     }
 
                   }
-                  // cityAppear()
+                  cityAppear()
                   break;
                 case 4:
                   $('.honor-box').css('opacity', '1')
+                  $('.ies-img-2').css('top', '-17%')
+                  $('.honor .down-arrow2').css('top', '0')
+                  bindArrow('.honor');
                   break;
               }
             }
